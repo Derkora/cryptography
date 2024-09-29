@@ -264,12 +264,19 @@ if len(plaintext_hex) == 16 and len(key_hex) == 16:
 
     if st.sidebar.button("View Iteration Details"):
         round_data = round_results[round_selection - 1]
+        input_round_data = round_results[round_selection - 2]
+        key_data = round_selection - 1
         
         st.write(f"### Round {round_selection} Iteration")
-        st.write(f"48-bit Expansion Output: {format_bits(round_data['exp_output'], 6)}")
-        st.write(f"XOR Output: {format_bits(round_data['xor_output'], 6)}")
+        st.write("### Inputs:")
+        st.write(f"L({round_selection-1}): {format_bits(input_round_data['L'], 4)}")
+        st.write(f"R({round_selection-1}): {format_bits(input_round_data['R'], 4)}")
+        st.write(f"K({key_data + 1}): {format_bits(keys[key_data], 6)}")
+        st.write("### Outputs:")
+        st.write(f"48-bit Expansion Output for R({round_selection-1}): {format_bits(round_data['exp_output'], 6)}")
+        st.write(f"XOR Output for K({round_selection}) and R({round_selection-1}): {format_bits(round_data['xor_output'], 6)}")
         st.write(f"S-box Output: {format_bits(round_data['sbox_output'], 4)}")
-        st.write(f"Permuted Output: {format_bits(round_data['f_output'], 4)}")
+        st.write(f"S-box Permuted Output: {format_bits(round_data['f_output'], 4)}")
         st.write(f"L({round_selection}): {format_bits(round_data['L'], 4)}")
         st.write(f"R({round_selection}): {format_bits(round_data['R'], 4)}")
     

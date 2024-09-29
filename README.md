@@ -11,7 +11,7 @@ pip install streamlit
 1. Clone the repository:
 2. Run the Streamlit app:
 ```sh
-streamlit run des_simulation.py
+streamlit run main.py
 ```
 3. The app will open in your default web browser. You can input a plaintext and key, both in **16-character hexadecimal format**, and explore the DES encryption process.
 
