@@ -187,7 +187,7 @@ def feistel_function(r, k):
 
 # Function to display bits with spacing for better readability
 def format_bits(bits, group_size):
-    return ' '.join([bits[i:i+group_size] for i in range(0, len(bits), group_size)])
+    return ' '.join([bits[i:i+group_size] for i in range(0, len(bits), group_size)]).upper()
 
 # Streamlit UI
 st.title("DES Algorithm Complete Simulation")

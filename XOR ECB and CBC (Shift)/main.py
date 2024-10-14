@@ -14,7 +14,7 @@ def bin_to_text(bin_value):
 
 # Convert binary to hex
 def bin_to_hex(bin_value):
-    return hex(int(bin_value, 2))[2:].zfill(len(bin_value) // 4)
+    return hex(int(bin_value, 2))[2:].zfill(len(bin_value) // 4).upper()
 
 # Function for XOR with shifting 1 bit to the left
 def xor_shift_bin(bin_plaintext, bin_key):
